@@ -79,7 +79,7 @@ console.log(education1);
 let education2 = ["Zula", ...team1, ...team2];
 console.log(education2);
 
-// let y const
+// let y const --------------------------------
 
 {
   var globalVar = "Global Var";
@@ -96,3 +96,63 @@ console.log(globalVar);
 const a = "b"; // con const no se puede a reasignar
 a = "a";
 console.log(a);
+
+// Parámetros en objetos ----------------------------------------
+
+let name = "Lisa";
+let age = 30;
+
+obj = { name: name, age: age };
+
+// es6
+
+obj2 = { name, age };
+console.log(obj2);
+
+// Arrow functions ----------------------------------------
+
+const names = [
+  {
+    name: "Sydnee",
+    age: 23
+  },
+  {
+    name: "Stuart",
+    age: 32
+  }
+];
+
+let listOfNames = names.map(function(item) {
+  console.log(item.name);
+});
+
+//es6
+
+let listOfNames2 = names.map(item => console.log(item.name));
+
+const listOfNames3 = (name, age, country) => {
+  // ...
+};
+
+const listOfNames4 = name => {
+  // ...
+};
+
+const square = num => num * num;
+
+// Promesas -----------------------------------------------
+
+const helloPromise = () => {
+  return new Promise((resolve, reject) => {
+    if (true) {
+      resolve("Hey!");
+    } else {
+      reject("Ups!!");
+    }
+  });
+};
+
+helloPromise()
+  .then(response => console.log(response))
+  .then(() => console.log("Hola!"))
+  .catch(error => console.log(error));
